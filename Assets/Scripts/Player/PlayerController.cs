@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
 
             // Apply rotation
             transform.Rotate(-rotationY, rotationX, 0);
+
+            //TODO: Add Q & E input
         }
 
         
