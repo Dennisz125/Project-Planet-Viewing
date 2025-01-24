@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6f35e2df4aa39f429c0adf269f985b5, type: 3}
+  m_Name: Uranus
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 6270168342825316686, guid: 9a7db08c47014d241a023f0d1e27ec75, type: 3}
+  size: 0.6
+  speed: 1.5
+  radius: 50
+  manualOverrideMaterial: {fileID: 2100000, guid: f95339d864ba1f74797d5152d7f2db02, type: 2}
+  moons: []
+  primaryInfo: "Uranus is the seventh planet from the Sun. It is a gaseous cyan-coloured
+    ice giant. Most of the planet is made of water, ammonia, and methane in a supercritical
+    phase of matter, which astronomy calls \"ice\" or volatiles. The planet's atmosphere
+    has a complex layered cloud structure and has the lowest minimum temperature
+    (49 K (\u2212224 \xB0C; \u2212371 \xB0F)) of all the Solar System's planets.
+    It has a marked axial tilt of 82.23\xB0 with a retrograde rotation period of
+    17 hours and 14 minutes. This means that in an 84-Earth-year orbital period around
+    the Sun, its poles get around 42 years of continuous sunlight, followed by 42
+    years of continuous darkness."

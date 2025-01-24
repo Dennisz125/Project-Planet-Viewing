@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6f35e2df4aa39f429c0adf269f985b5, type: 3}
+  m_Name: Saturn
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 6270168342825316686, guid: 9a7db08c47014d241a023f0d1e27ec75, type: 3}
+  size: 0.9
+  speed: 2
+  radius: 40
+  manualOverrideMaterial: {fileID: 2100000, guid: 244cf67061c3f2c46a1af1bf9f240163, type: 2}
+  moons: []
+  primaryInfo: Saturn is the sixth planet from the Sun and the second largest in
+    the Solar System, after Jupiter. It is a gas giant, with an average radius of
+    about nine times that of Earth.[27][28] It has an eighth the average density
+    of Earth, but is over 95 times more massive.[29][30][31] Even though Saturn is
+    almost as big as Jupiter, Saturn has less than a third its mass. Saturn orbits
+    the Sun at a distance of 9.59 AU (1,434 million km), with an orbital period of
+    29.45 years.

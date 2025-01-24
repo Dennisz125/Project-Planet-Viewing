@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6f35e2df4aa39f429c0adf269f985b5, type: 3}
+  m_Name: Earth's Moon
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 6270168342825316686, guid: 9a7db08c47014d241a023f0d1e27ec75, type: 3}
+  size: 0.1
+  speed: 10
+  radius: 1.5
+  manualOverrideMaterial: {fileID: 2100000, guid: 71941c33e0187824abe8e03545d8262a, type: 2}
+  moons: []
+  primaryInfo: "The Moon is Earth's only natural satellite. It orbits at an average
+    distance of 384,400 km (238,900 mi), about 30 times the diameter of Earth. Tidal
+    forces between Earth and the Moon have synchronized the Moon's orbital period
+    (lunar month) with its rotation period (lunar day) at 29.5 Earth days, causing
+    the same side of the Moon to always face Earth. The Moon's gravitational pull\u2014and,
+    to a lesser extent, the Sun's\u2014are the main drivers of Earth's tides."

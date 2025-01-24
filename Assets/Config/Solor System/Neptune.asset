@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6f35e2df4aa39f429c0adf269f985b5, type: 3}
+  m_Name: Neptune
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 6270168342825316686, guid: 9a7db08c47014d241a023f0d1e27ec75, type: 3}
+  size: 0.6
+  speed: 1
+  radius: 60
+  manualOverrideMaterial: {fileID: 2100000, guid: 064c6d35c6aa2ef4b8390ae02c50c89a, type: 2}
+  moons: []
+  primaryInfo: "Neptune is the eighth and farthest known planet from the Sun. It
+    is the fourth-largest planet in the Solar System by diameter, the third-most-massive
+    planet, and the densest giant planet. It is 17 times the mass of Earth. Compared
+    to its fellow ice giant Uranus, Neptune is slightly more massive, but denser
+    and smaller. Being composed primarily of gases and liquids,[21] it has no well-defined
+    solid surface, and orbits the Sun once every 164.8 years at an orbital distance
+    of 30.1 astronomical units (4.5 billion kilometres; 2.8 billion miles). It is
+    named after the Roman god of the sea and has the astronomical symbol \u2646,
+    representing Neptune's trident.[e]"

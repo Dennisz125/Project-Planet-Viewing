@@ -10,7 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1647304915848230824}
   - component: {fileID: 8076544009040620871}
-  m_Layer: 0
+  - component: {fileID: 6176180523161426108}
+  - component: {fileID: 3675264927599410312}
+  m_Layer: 7
   m_Name: Planet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,8 +47,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d41550c6a3626f140ad6bb6d40989a00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sun: {fileID: 0}
+  center: {fileID: 0}
   orbitSpeed: 10
+--- !u!114 &6176180523161426108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6270168342825316686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e18d85db25acc324a902ed82df7dc929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetCanvas: {fileID: 0}
+--- !u!135 &3675264927599410312
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6270168342825316686}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7650372020623921849
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,7 +95,7 @@ GameObject:
   - component: {fileID: 7104121158379109623}
   - component: {fileID: 7970537818546663164}
   - component: {fileID: 5105718873571744544}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,9 +182,9 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
