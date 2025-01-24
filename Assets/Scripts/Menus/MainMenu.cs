@@ -40,6 +40,20 @@ public class MainMenu : MonoBehaviour
         StartCoroutine(StartingGame());
     }
     */
+    
+    public void ReturnHomePage()
+    {
+
+        StartCoroutine(ReturningHomePage());
+    }
+
+    private IEnumerator ReturningHomePage()
+    {
+        mainPanelController.Show(speed: 0.3f);
+
+        while (!mainPanelController.isVisible)
+            yield return null;
+    }
 
     private void StartNewGame()
     {

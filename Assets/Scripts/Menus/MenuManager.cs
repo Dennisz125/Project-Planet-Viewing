@@ -73,9 +73,9 @@ public class MenuManager : MonoBehaviour
         OpenPage(page);
     }
 
-    public void OpenTestPage()
+    public void OpenNAPage()
     {
-        var page = GetPage(MenuPage.PageType.Test);
+        var page = GetPage(MenuPage.PageType.NA);
         OpenPage(page);
     }
 
@@ -112,6 +112,7 @@ public class MenuManager : MonoBehaviour
     public void Click_Home()
     {
         //UnityEngine.SceneManagement.SceneManager.LoadScene(MainMenu.MAIN_MENU_SCENE);
+
     }
 
     public void Click_Quit()

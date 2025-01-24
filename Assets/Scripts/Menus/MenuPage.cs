@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MenuPage : MonoBehaviour
 {
-    public enum PageType { SaveAndLoad, Config, Help, Planet, Test}
+    public enum PageType { SaveAndLoad, Config, Help, Planet, NA}
     public PageType pageType;
 
     private const string OPEN = "Open";
