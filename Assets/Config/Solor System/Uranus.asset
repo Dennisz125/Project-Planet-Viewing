@@ -15,8 +15,11 @@ MonoBehaviour:
   prefab: {fileID: 6270168342825316686, guid: 9a7db08c47014d241a023f0d1e27ec75, type: 3}
   size: 0.6
   speed: 1.5
-  radius: 50
+  semiMajorAxis: 50
+  semiMinorAxis: 49.8
+  inclination: 0.8
   manualOverrideMaterial: {fileID: 2100000, guid: f95339d864ba1f74797d5152d7f2db02, type: 2}
+  ColliderScale: 2
   moons: []
   primaryInfo: "Uranus is the seventh planet from the Sun. It is a gaseous cyan-coloured
     ice giant. Most of the planet is made of water, ammonia, and methane in a supercritical

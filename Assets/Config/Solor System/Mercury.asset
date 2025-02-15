@@ -15,8 +15,11 @@ MonoBehaviour:
   prefab: {fileID: 6270168342825316686, guid: 9a7db08c47014d241a023f0d1e27ec75, type: 3}
   size: 0.2
   speed: 15
-  radius: 5
+  semiMajorAxis: 5
+  semiMinorAxis: 4.9
+  inclination: 7
   manualOverrideMaterial: {fileID: 2100000, guid: e7250337d58aa4545af7a94b478038a1, type: 2}
+  ColliderScale: 2
   moons: []
   primaryInfo: Mercury is the first planet from the Sun and the smallest in the Solar
     System. In English, it is named after the ancient Roman god Mercurius (Mercury),

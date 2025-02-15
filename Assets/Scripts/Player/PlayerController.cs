@@ -1,61 +1,110 @@
 
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 /// <summary>
 /// Controls the player
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 10f; // Speed of movement
-    public float rotationSpeed = 100f; // Speed of rotation
+    [Header("Movement Settings")]
+    public float moveSpeed = 5f;
+    public float sprintMultiplier = 2f;
 
-    [Header("Debug Settings")]
-    [SerializeField] int rayLength = 100;
-    [SerializeField] Color rayColor = Color.white;
+    [Header("Rotation Settings")]
+    public float lookSpeed = 0.5f;
+    public float rollSpeed = 50f; // Speed for Q & E roll rotation
 
-    void Update()
+    [Header("Zoom Settings")]
+    public float zoomSpeed = 5f;
+    public float minZoom = 2f;
+    public float maxZoom = 15f;
+
+    private Vector2 moveInput;
+    private Vector2 lookInput;
+    private float rollInput;
+    private float ascendDescendInput;
+    //private float zoomInput;
+    private bool isSprinting;
+    private bool isLooking;
+
+    private Transform camTransform;
+    //private float currentZoom = 10f;
+
+    [Header("Raycast Settings")]
+    float rayLength = 100f;
+    Color rayColor = Color.white;
+
+    private void Awake()
     {
-        // Movement input
-        float moveForward = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
-        float moveRight = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
+        camTransform = Camera.main.transform;
+    }
 
-        // Apply movement
-        transform.Translate(moveRight, 0, moveForward);
-
-        if (Input.GetKey(KeyCode.Space))
+    // Input System Functions
+    public void OnMove(InputAction.CallbackContext context) => moveInput = context.ReadValue<Vector2>();
+    public void OnLook(InputAction.CallbackContext context) => lookInput = context.ReadValue<Vector2>();
+    public void OnLookEnable(InputAction.CallbackContext context) => isLooking = context.ReadValueAsButton();
+    //public void OnZoom(InputAction.CallbackContext context) => zoomInput = context.ReadValue<float>();
+    public void OnSprint(InputAction.CallbackContext context) => isSprinting = context.ReadValueAsButton();
+    public void OnRoll(InputAction.CallbackContext context) => rollInput = context.ReadValue<float>();
+    public void OnAscendDescend(InputAction.CallbackContext context) => ascendDescendInput = context.ReadValue<float>();
+    public void OnFire(InputAction.CallbackContext context)
+    {
+        if (context.performed && !MenuManager.Instance.isOpen)
         {
-            // Rotation input (mouse movement)
-            float rotationX = Input.GetAxis("Mouse X") * rotationSpeed * Time.deltaTime;
-            float rotationY = Input.GetAxis("Mouse Y") * rotationSpeed * Time.deltaTime;
+            Vector2 screenPosition;
 
-            // Apply rotation
-            transform.Rotate(-rotationY, rotationX, 0);
-
-            //TODO: Add Q & E input
-        }
-
-        /*
-        // Handle touch input
-        if (Input.touchCount > 0)
-        {
-            Touch touch = Input.GetTouch(0);
-
-            if (touch.phase == TouchPhase.Ended) // Detect tap
+            // Check for mouse or touch input
+            if (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.isPressed)
             {
-                HandleTouch(touch.position);
+                screenPosition = Touchscreen.current.primaryTouch.position.ReadValue();
             }
-        }
-        */
+            else if (Mouse.current != null && Mouse.current.leftButton.isPressed)
+            {
+                screenPosition = Mouse.current.position.ReadValue();
+            }
+            else
+            {
+                return;
+            }
 
-        // Handle mouse input (for testing in the editor)
-        if (Input.GetMouseButtonDown(0) && !MenuManager.Instance.isOpen)
-        {
-            HandleTouch(Input.mousePosition);
+            HandleTouch(screenPosition);
         }
     }
 
-    void HandleTouch(Vector3 touchPosition)
+    private void Update()
     {
+        // Camera Movement
+        float speed = isSprinting ? moveSpeed * sprintMultiplier : moveSpeed;
+        Vector3 moveDirection = speed * Time.deltaTime * (camTransform.forward * moveInput.y + camTransform.right * moveInput.x);
+        transform.position += new Vector3(moveDirection.x, 0, moveDirection.z); // Keep movement horizontal
+
+        // Ascend & Descend (Space & Ctrl or Triggers)
+        transform.position += Vector3.up * (ascendDescendInput * speed * Time.deltaTime);
+
+        // Camera Rotation (Yaw & Pitch)
+        if (isLooking)
+        {
+            float yaw = lookInput.x * lookSpeed;
+            float pitch = -lookInput.y * lookSpeed; // Invert vertical look
+            transform.Rotate(Vector3.up * yaw, Space.World);
+            transform.Rotate(Vector3.right * pitch, Space.Self);
+        }
+
+        // Roll Rotation (Q/E or Gamepad Bumpers)
+        float roll = rollInput * rollSpeed * Time.deltaTime;
+        transform.Rotate(Vector3.forward * roll, Space.Self);
+
+        /*
+        // Camera Zoom (Adjust Field of View)
+        currentZoom -= zoomInput * zoomSpeed * Time.deltaTime;
+        currentZoom = Mathf.Clamp(currentZoom, minZoom, maxZoom);
+        Camera.main.fieldOfView = currentZoom;
+        */
+       
+    }
+
+    void HandleTouch(Vector2 touchPosition) { 
         // Raycast from the touch position into the scene
         Ray ray = Camera.main.ScreenPointToRay(touchPosition);
         Debug.DrawRay(ray.origin, ray.direction * rayLength, rayColor, 1.0f); // Draw the debug ray

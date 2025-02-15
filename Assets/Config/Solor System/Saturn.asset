@@ -15,8 +15,11 @@ MonoBehaviour:
   prefab: {fileID: 6270168342825316686, guid: 9a7db08c47014d241a023f0d1e27ec75, type: 3}
   size: 0.9
   speed: 2
-  radius: 40
+  semiMajorAxis: 40
+  semiMinorAxis: 39.87
+  inclination: 2.5
   manualOverrideMaterial: {fileID: 2100000, guid: 244cf67061c3f2c46a1af1bf9f240163, type: 2}
+  ColliderScale: 2
   moons: []
   primaryInfo: Saturn is the sixth planet from the Sun and the second largest in
     the Solar System, after Jupiter. It is a gas giant, with an average radius of

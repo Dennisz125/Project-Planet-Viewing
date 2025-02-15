@@ -15,8 +15,11 @@ MonoBehaviour:
   prefab: {fileID: 6270168342825316686, guid: 9a7db08c47014d241a023f0d1e27ec75, type: 3}
   size: 0.5
   speed: 10
-  radius: 15
+  semiMajorAxis: 15
+  semiMinorAxis: 14.99
+  inclination: 0
   manualOverrideMaterial: {fileID: 0}
+  ColliderScale: 2
   moons:
   - {fileID: 11400000, guid: f0d07637ee6728a43bf7353d4f3c50fd, type: 2}
   primaryInfo: Earth is the third planet from the Sun and the only astronomical object

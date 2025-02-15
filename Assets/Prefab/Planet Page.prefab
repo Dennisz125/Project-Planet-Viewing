@@ -562,6 +562,7 @@ MonoBehaviour:
   primaryInfo: {fileID: 2264897986189443222}
   secondaryInfo: {fileID: 5247011520035313041}
   planetImage: {fileID: 1467591932360236780}
+  backButton: {fileID: 915457061416007651}
 --- !u!1 &4707721930399730633
 GameObject:
   m_ObjectHideFlags: 0

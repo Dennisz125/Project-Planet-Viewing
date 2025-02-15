@@ -12,4 +12,16 @@ public class PlanetInfoPage : MonoBehaviour
     public TextMeshProUGUI secondaryInfo;
 
     public RawImage planetImage;
+
+    public Button backButton;
+
+    private void Awake()
+    {
+        backButton.onClick.AddListener(OpenAllGameplayUIPages);
+    }
+
+    private void OpenAllGameplayUIPages()
+    {
+        MenuManager.Instance.OpenAllGameplayPages();
+    }
 }

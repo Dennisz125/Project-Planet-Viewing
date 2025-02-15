@@ -53,12 +53,18 @@ public class SystemManager : MonoBehaviour
         po = Instantiate(planet.prefab, parent);
 
         po.name = planet.name;
-        po.transform.localPosition = new Vector3(0, 0, planet.radius);
+        po.transform.localPosition = new Vector3(0, 0, planet.semiMinorAxis);
         po.transform.localScale = Vector3.one * planet.size;
 
         PlanetOrbit poScript = po.GetComponent<PlanetOrbit>();
-        if (poScript.center == null) poScript.center = parent;
-        poScript.orbitSpeed = planet.speed;
+        poScript.SetValues(planet, parent);
+
+        PlanetInteraction piScript = po.GetComponent<PlanetInteraction>();
+        piScript.planetNameText.text = planet.name;
+
+        SphereCollider collider = po.GetComponent<SphereCollider>();
+        if (collider != null)
+            collider.radius = planet.ColliderScale / 2;
 
         if (planet.manualOverrideMaterial != null) po.gameObject.GetComponentInChildren<Renderer>().material = planet.manualOverrideMaterial;
     }

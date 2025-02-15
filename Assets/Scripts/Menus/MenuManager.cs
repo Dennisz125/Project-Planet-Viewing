@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -8,10 +9,11 @@ public class MenuManager : MonoBehaviour
     private MenuPage activePage = null;
     public bool isOpen { private set; get; } = false;
 
-    public GameObject RootPage;
+    public GameObject PlanetRootPage;
 
     [SerializeField] private CanvasGroup root;
     [SerializeField] private MenuPage[] pages;
+    [SerializeField] private MenuPage[] persistencePage;
 
     private CanvasGroupController rootCG;
 
@@ -30,7 +32,13 @@ public class MenuManager : MonoBehaviour
 
     public void DynamicLoadNewPagesList()
     {
-        pages = RootPage.GetComponentsInChildren<MenuPage>();
+        pages = PlanetRootPage.GetComponentsInChildren<MenuPage>();
+
+        List<MenuPage> list = new List<MenuPage>();
+        list.AddRange(pages.ToList());
+        list.AddRange(persistencePage.ToList());
+
+        pages = list.ToArray();
     }
 
     private MenuPage GetPage(MenuPage.PageType pageType, string name = null)
@@ -92,6 +100,24 @@ public class MenuManager : MonoBehaviour
 
         if (!isOpen)
             OpenRoot();
+    }
+
+    public void OpenAllGameplayPages()
+    {
+        foreach (var page in pages)
+        {
+            if (page.pageType == MenuPage.PageType.Gameplay)
+                page.Open();
+        }
+    }
+
+    public void CloseAllGameplayPages()
+    {
+        foreach (var page in pages)
+        {
+            if (page.pageType == MenuPage.PageType.Gameplay)
+                page.Close();
+        }
     }
 
     public void OpenRoot()

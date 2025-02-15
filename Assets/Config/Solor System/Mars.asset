@@ -15,8 +15,11 @@ MonoBehaviour:
   prefab: {fileID: 6270168342825316686, guid: 9a7db08c47014d241a023f0d1e27ec75, type: 3}
   size: 0.3
   speed: 8
-  radius: 20
+  semiMajorAxis: 20
+  semiMinorAxis: 19.92
+  inclination: 1.85
   manualOverrideMaterial: {fileID: 2100000, guid: e7250337d58aa4545af7a94b478038a1, type: 2}
+  ColliderScale: 2
   moons: []
   primaryInfo: 'Mars is the fourth planet from the Sun. The surface of Mars is orange-red
     because it is covered in iron(III) oxide dust, giving it the nickname "the Red

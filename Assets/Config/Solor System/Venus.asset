@@ -15,8 +15,11 @@ MonoBehaviour:
   prefab: {fileID: 6270168342825316686, guid: 9a7db08c47014d241a023f0d1e27ec75, type: 3}
   size: 0.5
   speed: 12
-  radius: 10
+  semiMajorAxis: 10
+  semiMinorAxis: 9.88
+  inclination: 3.4
   manualOverrideMaterial: {fileID: 2100000, guid: 064c6d35c6aa2ef4b8390ae02c50c89a, type: 2}
+  ColliderScale: 2
   moons: []
   primaryInfo: "Venus is the second planet from the Sun. It is a terrestrial planet
     and is the closest in mass and size to its orbital neighbour Earth. Venus has
